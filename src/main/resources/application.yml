@@ -1,0 +1,30 @@
+micronaut:
+  application:
+    name: touragencyadminback
+  server:
+    port: 8081
+    cors:
+      enabled: true
+  netty:
+    event-loops:
+      other:
+        num-threads: 10
+        prefer-native-transport: true
+    http:
+      client:
+        event-loop-group: other
+logger:
+  levels:
+    io:
+      micronaut:
+        http:
+          client: DEBUG
+netty:
+  default:
+    allocator:
+      max-order: 3
+
+login:
+  username: ${USERNAME}
+  password: ${PASSWORD}
+
